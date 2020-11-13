@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ping -c 1 8.8.8.8 |  awk 'FNR == 2 { print $(NF-1) }' | cut -d'=' -f2 
