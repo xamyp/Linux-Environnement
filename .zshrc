@@ -14,13 +14,14 @@ export TERM=xterm-256color
 # Path to your oh-my-zsh installation.
 export ZSH="/home/max/.oh-my-zsh"
 
+export DENO_INSTALL="/$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions sudo docker docker-compose)
+plugins=(git zsh-autosuggestions sudo docker docker-compose kubectl)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -109,8 +110,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vpn='sudo openfortivpn'
-
+alias s='sshh'
+alias uxplay='/home/max/UxPlay-master/build/uxplay'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
+alias kk="kubectl get all -o wide"
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
