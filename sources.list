@@ -15,3 +15,6 @@ deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
 deb https://typora.io/linux ./
 # deb-src https://typora.io/linux ./
 deb [arch=amd64] https://repo.fortinet.com/repo/ubuntu/ /bionic multiverse
+
+deb [arch=amd64] https://apt.releases.hashicorp.com focal main
+# deb-src [arch=amd64] https://apt.releases.hashicorp.com focal main
