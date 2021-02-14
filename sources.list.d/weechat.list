@@ -1,0 +1,2 @@
+deb https://weechat.org/ubuntu focal main
+deb-src https://weechat.org/ubuntu focal main
